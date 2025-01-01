@@ -1,4 +1,4 @@
-
+import Link from "next/link";
 export default function Hero() {
   return (
     <>
@@ -19,12 +19,12 @@ export default function Hero() {
 
           {/* Features Section */}
           <div className="flex flex-col md:flex-row justify-center gap-6 sm:gap-8">
-            <button className="px-8 py-3 bg-blue-600 text-white text-lg font-semibold rounded-md focus:outline-none hover:bg-blue-900 transition-all duration-300 ease-in-out transform hover:scale-105 shadow-md">
+            <Link href='/upload' className="px-8 py-3 bg-blue-600 text-white text-lg font-semibold rounded-md focus:outline-none hover:bg-blue-900 transition-all duration-300 ease-in-out transform hover:scale-105 shadow-md">
               Get Started
-            </button>
-            <button className="px-8 py-3 bg-transparent border-2 border-blue-600 text-blue-600 text-lg font-semibold rounded-md focus:outline-none hover:bg-blue-600 hover:text-white transition-all duration-300 ease-in-out transform hover:scale-105 shadow-md">
+            </Link>
+            <Link href='/about' className="px-8 py-3 bg-transparent border-2 border-blue-600 text-blue-600 text-lg font-semibold rounded-md focus:outline-none hover:bg-blue-600 hover:text-white transition-all duration-300 ease-in-out transform hover:scale-105 shadow-md">
               Learn More
-            </button>
+            </Link>
           </div>
 
           <div className="flex flex-col items-center mt-12 sm:mt-16">

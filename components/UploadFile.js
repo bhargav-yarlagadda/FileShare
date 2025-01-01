@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { IoCloudUploadOutline } from "react-icons/io5";
 
 const UploadFile = () => {
@@ -36,9 +36,9 @@ const UploadFile = () => {
   const handleClear = () => {
     setSelectedFile(null); // Clear the selected file
   };
-
+  const inputRef = useRef()
   return (
-    <div className="flex flex-col items-center justify-center h-screen bg-gradient-to-br from-white to-blue-50 px-6 py-10">
+    <div className="flex flex-col items-center animate-slide-up justify-center h-screen bg-gradient-to-br from-white to-blue-50 px-6 ">
       {/* Heading */}
       <div className="text-center mb-10">
         <h1 className="text-4xl font-extrabold text-gray-800 mb-2 leading-tight">
@@ -51,11 +51,15 @@ const UploadFile = () => {
 
       {/* Upload Box */}
       <div
-        className={`border-2 border-dashed bg-sky-300 py-28 rounded-xl p-8 w-full max-w-lg text-center transition-all ${
-          dragActive
+        onClick={() => {
+          if (inputRef.current) {
+            inputRef.current.click(); // Trigger the file picker
+          }
+        }}
+        className={`border-2 border-dashed cursor-pointer bg-sky-400 py-28 rounded-xl p-8 w-full max-w-lg text-center transition-all ${dragActive
             ? 'border-red-950 bg-blue-50 shadow-lg'
             : 'border-gray-900 bg-white shadow-md hover:shadow-lg'
-        }`}
+          }`}
         onDragOver={handleDragOver}
         onDragLeave={handleDragLeave}
         onDrop={handleDrop}
@@ -64,13 +68,13 @@ const UploadFile = () => {
           type="file"
           id="fileInput"
           className="hidden"
+          ref={inputRef}
           onChange={handleFileChange}
         />
-        <label
-          htmlFor="fileInput"
+        <div 
           className="flex flex-col items-center justify-center cursor-pointer"
         >
-          <IoCloudUploadOutline className='w-[40px] h-[40px] text-gray-100 animate-bounce' />
+          <IoCloudUploadOutline className="w-[40px] h-[40px] text-gray-100 animate-bounce" />
           <p className="text-lg font-semibold text-gray-700">
             <span className="text-blue-600 underline">Click to upload</span> or{' '}
             <span className="text-blue-600 underline">Drag and Drop</span>
@@ -78,8 +82,9 @@ const UploadFile = () => {
           <p className="text-sm text-gray-500 mt-1">
             Supported formats: SVG, PNG, JPG, GIF (Max: 20MB)
           </p>
-        </label>
+        </div>
       </div>
+
 
       {/* Upload Button */}
       {selectedFile && (

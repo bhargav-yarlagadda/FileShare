@@ -12,9 +12,9 @@ export default function Page() {
         <Image
           src="/images/auth.jpg" // Replace with your image path
           alt="Descriptive Alt Text"
-          width={600}  // Adjust the width based on your design needs
+          width={500}  // Adjust the width based on your design needs
           height={400} // Adjust the height based on your design needs
-          className="rounded-lg  max-h-[85vh] max-w-full" // Optional, to add rounded corners
+          className="rounded-lg  max-h-[85vh] max-w-xl" // Optional, to add rounded corners
         />
       </div>
 
