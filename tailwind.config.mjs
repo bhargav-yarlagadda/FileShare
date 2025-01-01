@@ -7,9 +7,14 @@ export default {
   ],
   theme: {
     extend: {
-      colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+      animation: {
+        'slide-up': 'slideUp 1s ease-out', // Custom animation for sliding up
+      },
+      keyframes: {
+        slideUp: {
+          '0%': { transform: 'translateY(50px)', opacity: '0' },
+          '100%': { transform: 'translateY(0)', opacity: '1' },
+        },
       },
     },
   },
