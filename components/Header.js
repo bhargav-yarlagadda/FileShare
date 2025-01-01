@@ -78,7 +78,7 @@ const Header = () => {
         </Link>
 
         {/* Upload Link with Line Transition */}
-        <Link href="/Upload" className="group text-md font-medium transition-colors duration-300">
+        <Link href="/upload" className="group text-md font-medium transition-colors duration-300">
           <div className="flex flex-col items-center">
             <span className="hover:text-sky-600">Upload</span>
             <div className="h-[2px] w-0 bg-blue-800 rounded-md group-hover:w-10 transition-all duration-300"></div>
