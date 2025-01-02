@@ -3,11 +3,12 @@
 import React, { useState, useRef } from 'react';
 import { IoCloudUploadOutline } from "react-icons/io5";
 import { PopUpCard } from './PopUpCard';
+import FilePreview from './FilePreview';
 
 const UploadFile = () => {
   const [selectedFile, setSelectedFile] = useState(null);
   const [dragActive, setDragActive] = useState(false);
-  const [isPopUpActive,setIsPopUpActive] = useState(false)
+  const [isPopUpActive, setIsPopUpActive] = useState(false)
   const handleFileChange = (event) => {
     const file = event.target.files[0];
 
@@ -33,9 +34,9 @@ const UploadFile = () => {
   const handleUpload = () => {
     if (!selectedFile) return alert("No file selected.");
     // 20971520 is byte conversion of 20Mb
-    if (selectedFile && selectedFile.size > 20971520 ) {
+    if (selectedFile && selectedFile.size > 20971520) {
       setIsPopUpActive(true)
-      return ;
+      return;
     }
     alert(`Uploading ${selectedFile.name}`);
   };
@@ -57,7 +58,7 @@ const UploadFile = () => {
       </div>
 
       {/* Upload Box */}
-      <div
+      {!selectedFile && <div
         onClick={() => {
           if (inputRef.current) {
             inputRef.current.click(); // Trigger the file picker
@@ -90,11 +91,14 @@ const UploadFile = () => {
             Supported formats: SVG, PNG, JPG, GIF (Max: 20MB)
           </p>
         </div>
-      </div>
-          {/* pop up card here */}
-          {
-            isPopUpActive && <PopUpCard message={'File is too big ,please select file less than 20MB'} handler={setIsPopUpActive}/>
-          }
+      </div>}
+      {/* pop up card here */}
+      {
+        isPopUpActive && <PopUpCard message={'File is too big ,please select file less than 20MB'} handler={setIsPopUpActive} />
+      }
+      {
+        selectedFile && <FilePreview file={selectedFile}/>
+      }
       {/* Upload Button */}
       {selectedFile && (
         <div className="flex gap-4 mt-6">
