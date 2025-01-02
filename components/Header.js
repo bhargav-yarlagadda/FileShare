@@ -77,6 +77,7 @@ const Header = () => {
           </div>
         </Link>
 
+
         {/* Upload Link with Line Transition */}
         <Link href="/upload" className="group text-md font-medium transition-colors duration-300">
           <div className="flex flex-col items-center">

@@ -38,6 +38,7 @@ const Footer = () => {
                   {link}
                 </Link>
               </li>
+              
             ))}
           </ul>
         </div>

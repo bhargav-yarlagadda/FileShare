@@ -5,6 +5,7 @@ const Landing = () => {
   return (
     <div>
         <Header/>
+        
         <Hero/>
     </div>
   )
