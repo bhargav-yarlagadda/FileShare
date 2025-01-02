@@ -2,7 +2,7 @@ import Link from "next/link";
 export default function Hero() {
   return (
     <>
-      <main className="flex items-center justify-center bg-gray-50 animate-slide-up">
+      <main className="flex items-center justify-center bg-gray-50 py-5 animate-slide-up">
         <div className="max-w-5xl px-4 sm:px-6 flex flex-col items-center justify-center text-center ">
           
           {/* Hero Title Animation */}

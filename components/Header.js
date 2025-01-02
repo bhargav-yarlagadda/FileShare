@@ -70,7 +70,7 @@ const Header = () => {
         className={`md:flex gap-4 items-center text-gray-600 ${isMenuOpen ? 'absolute backdrop-blur-sm bg-opacity-75 inset-0 flex flex-col justify-start  gap-10 h-screen w-screen bg-white z-10 py-44' : 'hidden '} md:block flex flex-row transition-all duration-300`}
       >
         {/* Home Link with Line Transition */}
-        <Link href="/home" className="group text-md font-medium transition-colors duration-300">
+        <Link href="/" className="group text-md font-medium transition-colors duration-300">
           <div className="flex flex-col items-center">
             <span className="hover:text-sky-600">Home</span>
             <div className="h-[2px] w-0 bg-blue-800 rounded-md group-hover:w-10 transition-all duration-300"></div>
