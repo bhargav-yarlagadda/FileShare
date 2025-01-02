@@ -63,7 +63,7 @@ const UploadFile = () => {
             inputRef.current.click(); // Trigger the file picker
           }
         }}
-        className={`border-2 border-dashed cursor-pointer bg-blue-200 py-28 rounded-xl p-8 w-full max-w-lg text-center transition-all ${dragActive
+        className={`border-2 border-dashed cursor-pointer bg-blue-300 py-32 rounded-xl  w-full max-w-2xl text-center transition-all ${dragActive
           ? 'border-red-950 bg-blue-50 shadow-lg'
           : 'border-gray-900 bg-white shadow-md hover:shadow-lg'
           }`}
