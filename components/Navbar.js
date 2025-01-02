@@ -6,7 +6,7 @@ const Navbar = () => {
   const { user } = useUser();
 
   return (
-    <div className="bg-gradient-to-r from-blue-50 via-gray-100 to-blue-50 ">
+    <div className="bg-gradient-to-r  from-blue-50 via-gray-100 to-blue-50 ">
       <div className="flex justify-between items-center px-4 py-4 mx-auto">
         {/* Brand Name */}
         <span className="text-2xl group font-extrabold tracking-tight cursor-pointer">
